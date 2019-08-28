@@ -41,11 +41,20 @@ function zoom(e) {
 }
 logo.onwheel = zoom;
 
-//resized window
+// resized window
 
 let headerP = document.querySelector('header p');
 function windowResize() {
-  console.log('window resized')
   headerP.innerHTML = 'Window was resized!'
 }
 window.onresize =  windowResize;
+
+// mousemove = red
+
+headerP.addEventListener('mousemove', () => {
+    headerP.style.color = 'red';
+})
+
+// GSAP
+
+TweenMax.to(".img-fluid", 15, {opacity: 0});
